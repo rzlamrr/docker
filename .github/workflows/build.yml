@@ -1,0 +1,19 @@
+name: Docker Build
+on:
+  push:
+    branches:
+      - master
+  schedule:
+    - cron: '0 2 * * 0' # Weekly on Sundays at 02:00
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@master
+    - name: Build and Push
+      uses: elgohr/Publish-Docker-Github-Action@master
+      with:
+        name: rzlamrr/rail
+        username: rzlamrr
+        password: ${{ secrets.DOCKER_PASSWORD }}
