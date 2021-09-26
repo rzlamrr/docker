@@ -1,4 +1,4 @@
-FROM rzlamrr/megasdk:bullseye
+FROM rzlamrr/megasdk:bullseye-slim
 
 EXPOSE 80
 
